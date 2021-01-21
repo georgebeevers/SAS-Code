@@ -1,3 +1,4 @@
+%include "C:\temp\GIT\macros\*";
 %unix_file_list(local_path=C:\temp\hsbc\sas_files.txt,path=/mnt/c/,output=WORK.FILE_LIST_UNIX_BASE,atime=NO);
 %unix_file_list(local_path=C:\temp\hsbc\sas_files_lslu.txt,path=/mnt/c/,output=WORK.FILE_LIST_UNIX_LSLU,atime=YES);
 

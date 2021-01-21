@@ -1,4 +1,4 @@
-%macro load_data_audit_files(outtbl=,history=);
+%macro workspace_Server_logs(outtbl=,history=);
 /*Create a history macro */
 	data _null_;
 		call symput("dt_hist",PUT(intnx('day',today(),-&history),date9.));
@@ -26,7 +26,7 @@ proc sql noprint;
 		from readlogs;
 quit;
 
-Loop over the available 
+/*Loop over the available data*/
 %put &obsnum;
 	%do i=1 %to &obsnum;
 
@@ -69,90 +69,11 @@ Loop over the available
 	/*Drop the temporary files*/
 	proc datasets lib=work nolist;
 		delete _audit_data:;
+		delete readlogs;
 	run;
 
 %mend;
 
-%load_data_audit_files(outtbl=work.data_audit_final,history=10);
+/*%load_data_audit_files(outtbl=work.data_audit_final,history=10);*/
 
 
-
-/*Create and save to the VA load area*/
-libname m_va0 'C:\temp\SAS_Data\M_VA0';
-proc sql;
-	create table ws_log_data_usage_audit as 
-		select hostname
-			,userid
-			,dttm
-			,date
-			,time
-			,libref
-			,member
-			/*Set work directory to be fixed and remove dynamic nature*/
-
-	,
-	(case 
-		when index(path,"SAS Temporary Files")>0 then "C:\Users\SUKGEB~1\AppData\Local\Temp\SAS Temporary Files\" 
-		else path 
-	end)/*needs syntax completing - next week*/
-	as pathname
-		,fullpath
-		,membertype
-		,returncode
-		,openmode
-		,message
-		,PID
-		from data_audit_final
-			where libref not in ("SASHELP");
-quit;
-/*Examples below held in work unless needed*/
-/*Example Usage 1*/
-/*ATIME Usage*/
-proc sort data=m_va0.ws_log_data_usage_audit out=final;
-	by  fullpath descending dttm;
-run;
-
-data keep_out(drop=libref returncode);
-	set final (keep=dttm fullpath date time userid libref returncode);
-	by fullpath;
-
-	if first.fullpath;
-	where libref not in ("SASHELP","WORK") and returncode=0;
-run;
-
-/*Example Usage 2*/
-/*Access to Libraries*/
-proc sql;
-	create table audit_count as
-		select
-			libref
-			,pathname
-			,date
-			,userid
-			,count(userid) as count
-		from final
-			where libref not in ("SASHELP")
-				group by 1,2,3,4;
-quit;
-
-/*Deeper Audit*/
-proc sql;
-	create table deep_audit as
-		select * from final 
-			where libref = "M_CUST0" and date ="30JUN2020"d;
-quit;
-
-/*Error Count*/
-
-proc sql;
-create table errors as
-select
-libref
-,pathname
-,date
-,userid
-,returncode
-,message
-from final
-where returncode>0;
-quit;

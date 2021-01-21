@@ -18,10 +18,10 @@
 /*Testing Options*/
 
 
-%macro meta_get_user_code(path=);
+%macro meta_get_user_code(path=,table=);
 proc datasets lib=work noprint;
 	delete SASUserExit;
-	delete job_sourcecode;
+	delete &table.;
 run;
 	/*Get a list of jobs*/
 	%meta_extractjobs(table=job_list);
@@ -147,11 +147,11 @@ run;
 		/*A check is made to see if table exists. if it does then the information is inserted. If not*/
 		/*a new table is made. If placed in a batch cycle the base table could be held as an SCD2 and then */
 		/*only the new entries are inserted. */
-		%if %sysfunc(exist(job_sourcecode)) %then
+		%if %sysfunc(exist(&table.)) %then
 			%do;
 				/*Create DataSet Info Table*/
 				proc sql;
-					insert into job_sourcecode
+					insert into &table.
 						select * from _code_extract;
 				quit;
 
@@ -159,7 +159,7 @@ run;
 		%else
 			%do;
 
-				data job_sourcecode;
+				data &table.;
 					set _code_extract;
 				run;
 
@@ -193,18 +193,18 @@ run;
 			,:assoc_uri1 -
 			,:id1 -
 			,:job1 -
-		from job_sourcecode;
+		from &table.;
 	quit;
 
 	/*Loop over the objects and export as code. A header has been added to each piece of code to */
 	/*show where it came from. The URI and ID are unique to the object. Changes can be made to the header.*/
 	/*If it also possible to write to metadata and change what is held in the object. See SAS Support for */
 	/*more details*/
-	%do p=1 %to %get_obscnt(job_sourcecode);
+	%do p=1 %to %get_obscnt(&table.);
 		filename xl "&path.\&&jobid&p...sas";
 
 		data _null_;
-			set job_sourcecode end=eof;
+			set &table. end=eof;
 			where JOBID ="&&jobid&p.";
 
 			/* using member syntax here */

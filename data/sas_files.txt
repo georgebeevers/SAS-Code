@@ -1,0 +1,272 @@
+6755399442082466      0 -rwxrwxrwx   1 root     root          155 Jul  6 16:29 /mnt/c/temp/SAS_Data/audit/00_control_data/business_units.csv
+12384898976295411    576 -rwxrwxrwx   1 root     root       589824 Jul  6 16:46 /mnt/c/temp/SAS_Data/audit/01_source_data/01_01_AuditLogs/arm_logs.sas7bdat
+ 8725724279056882    576 -rwxrwxrwx   1 root     root       589824 Jul  6 16:46 /mnt/c/temp/SAS_Data/audit/01_source_data/01_01_AuditLogs/new_arm_logs.sas7bdat
+69524319247653197    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:52 /mnt/c/temp/SAS_Data/audit/01_source_data/01_01_AuditLogs/new_sas_logs.sas7bdat
+ 6473924465371796    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:52 /mnt/c/temp/SAS_Data/audit/01_source_data/01_01_AuditLogs/sas_logs.sas7bdat
+57139420273289708    128 -rwxrwxrwx   1 root     root       131072 Jul  6 16:46 /mnt/c/temp/SAS_Data/audit/01_source_data/01_01_AuditLogs/temp_arm_logs.sas7bdat
+22517998137879001    128 -rwxrwxrwx   1 root     root       131072 Jul  6 16:52 /mnt/c/temp/SAS_Data/audit/01_source_data/01_01_AuditLogs/temp_sas_logs.sas7bdat
+212795082394166920    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:53 /mnt/c/temp/SAS_Data/audit/01_source_data/01_02_Authentication/email.sas7bdat
+ 25614222881696477    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:55 /mnt/c/temp/SAS_Data/audit/01_source_data/01_02_Authentication/grplogins.sas7bdat
+ 23925373021432539    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:55 /mnt/c/temp/SAS_Data/audit/01_source_data/01_02_Authentication/grpmems.sas7bdat
+ 23643898044721882    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:55 /mnt/c/temp/SAS_Data/audit/01_source_data/01_02_Authentication/idgrps.sas7bdat
+215609832160609322    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:53 /mnt/c/temp/SAS_Data/audit/01_source_data/01_02_Authentication/location.sas7bdat
+ 16607023626955149    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:53 /mnt/c/temp/SAS_Data/audit/01_source_data/01_02_Authentication/logins.sas7bdat
+289919226012149374    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:53 /mnt/c/temp/SAS_Data/audit/01_source_data/01_02_Authentication/person.sas7bdat
+221802281649023209    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:53 /mnt/c/temp/SAS_Data/audit/01_source_data/01_02_Authentication/phone.sas7bdat
+  3659174698265361    192 -rwxrwxrwx   1 root     root       196608 Jul  6 16:56 /mnt/c/temp/SAS_Data/audit/01_source_data/01_02_Authentication/servercontext.sas7bdat
+ 10414574139321100    128 -rwxrwxrwx   1 root     root       131072 Jul  6 16:57 /mnt/c/temp/SAS_Data/audit/01_source_data/01_03_Dictionary/sastables_to_scan.sas7bdat
+ 39406496740518609      0 -rwxrwxrwx   1 root     root          150 Jul  6 16:44 /mnt/c/temp/SAS_Data/audit/business_units.csv
+ 61643019899696338      0 -rwxrwxrwx   1 root     root          470 Apr 30 12:56 /mnt/c/temp/SAS_Data/autoexec.sas
+290200700988789993     32 -rwxrwxrwx   1 root     root        32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/.v_cmd
+137078313658187042     36 -rwxrwxrwx   1 root     root        36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/.v_fmd
+152277962400572858     80 -rwxrwxrwx   1 root     root        81920 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/.v_imd
+ 90071992547517883     32 -rwxrwxrwx   1 root     root        32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/batch_jobs/.v_cmd
+  9007199254848561     36 -rwxrwxrwx   1 root     root        36864 Jun 23 21:22 /mnt/c/temp/SAS_Data/Banking/batch_jobs/.v_fmd
+152840912353970607 253696 -rwxrwxrwx   1 root     root     259784704 Jun  8 14:33 /mnt/c/temp/SAS_Data/Banking/coop_demo_output.sas7bdat
+ 48695170971051452     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/data_services/.v_cmd
+211387707509810207     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:22 /mnt/c/temp/SAS_Data/Banking/data_services/.v_fmd
+161285161655313856     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/.v_cmd
+ 32932572275254328     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:22 /mnt/c/temp/SAS_Data/Banking/foundations/.v_fmd
+ 43910096366970321     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/.v_cmd
+ 14355223812351039     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/.v_fmd
+157907461934786005     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/.v_cmd
+ 16044073672614977     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/.v_fmd
+160159261748471263     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Definitions/.v_cmd
+ 47569271064208459     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Definitions/.v_fmd
+ 18295873486300239      8 -rwxrwxrwx   1 root     root          5257 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Definitions/Household.met
+262334678294438993      8 -rwxrwxrwx   1 root     root          7172 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Definitions/Organization.met
+107241966126867540     12 -rwxrwxrwx   1 root     root         10449 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Definitions/Person.met
+ 57702370225792093      4 -rwxrwxrwx   1 root     root          2371 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Definitions/Policy.met
+ 97953291895415913      4 -rwxrwxrwx   1 root     root          3263 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Definitions/Product.met
+142144863238988914      8 -rwxrwxrwx   1 root     root          6890 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Definitions/Supplier.met
+ 82472168176330236     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Jobs/.v_cmd
+ 18858823439721602     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Jobs/.v_fmd
+ 24206847997224059     52 -rwxrwxrwx   1 root     root         53148 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Jobs/MDM_CheckProjectDifference.djf
+ 51228445761447043    160 -rwxrwxrwx   1 root     root        163363 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Jobs/MDM_CreateProject.djf
+ 13792273858929796    140 -rwxrwxrwx   1 root     root        142584 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Jobs/MDM_CreateProjectJobs.djf
+ 15762598695904390     48 -rwxrwxrwx   1 root     root         48421 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Jobs/MDM_CreateProjectSource.ddf
+ 63331869760005256     76 -rwxrwxrwx   1 root     root         74107 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Jobs/MDM_RollbackProject.djf
+ 32932572275254411     48 -rwxrwxrwx   1 root     root         45943 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Jobs/MDM_TruncateDeleteProject.djf
+108649341010420880     36 -rwxrwxrwx   1 root     root         34997 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Jobs/MDM_UpdateProject.djf
+ 61924494876452370     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Reports/.v_cmd
+ 54887620458685630     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Reports/.v_fmd
+ 82753643153040551      0 -rwxrwxrwx   1 root     root            65 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Reports/README
+121597189939111446     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Templates/.v_cmd
+ 60517119992898782     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Templates/.v_fmd
+ 46724846134076620    452 -rwxrwxrwx   1 root     root        460935 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Templates/MDM_LoadProjectTemplate.djf
+108930815987131640     68 -rwxrwxrwx   1 root     root         68862 May 18  2019 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Entities/Templates/MDM_UpdateSurvivorTemplate.ddf
+ 70931694131193364     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/.v_cmd
+ 27866022694462743     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/.v_fmd
+ 39406496739599899     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Household/.v_cmd
+107523441103578336     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Household/.v_fmd
+187743809466115612     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Organization/.v_cmd
+ 34339947158807880     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Organization/.v_fmd
+114841790498055712     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Person/.v_cmd
+ 49821070877893978     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Person/.v_fmd
+170010885933344294     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Policy/.v_cmd
+ 95138542128309630     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Policy/.v_fmd
+152559437377283624     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Product/.v_cmd
+ 64739244643558791     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Product/.v_fmd
+101893941569365552     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Shared/.v_cmd
+129197014310299023     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Shared/.v_fmd
+ 57702370225772684     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Supplier/.v_cmd
+ 18858823439721912     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/foundations/master_data/Rules/Supplier/.v_fmd
+ 68116944364067527     32 -rwxrwxrwx   1 root     root         32768 Jun 23 21:21 /mnt/c/temp/SAS_Data/Banking/process_services/.v_cmd
+ 60798594969609254     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:22 /mnt/c/temp/SAS_Data/Banking/process_services/.v_fmd
+298926425266825927     36 -rwxrwxrwx   1 root     root         36864 Jun 23 21:53 /mnt/c/temp/SAS_Data/Banking\ Repo/.v_fmd
+ 27303072740974316 578172 -rwxrwxrwx   1 root     root     592048128 Jun 23 22:10 /mnt/c/temp/SAS_Data/Banking\ Repo/Banking.rps
+ 56576470318934914   2504 -rwxrwxrwx   1 root     root       2564096 Jun 23 15:04 /mnt/c/temp/SAS_Data/Banking\ Repo/Bankingv2.rps
+196751008720856051   2504 -rwxrwxrwx   1 root     root       2564096 Jun 23 21:24 /mnt/c/temp/SAS_Data/Banking\ Repo/banking_v3.rps
+697213517312322108      4 -rwxrwxrwx   1 root     root          1219 Apr  1 11:22 /mnt/c/temp/SAS_Data/Code/load_checker.sas
+  9851624184959614      4 -rwxrwxrwx   1 root     root          3471 Apr  8 13:04 /mnt/c/temp/SAS_Data/Code/metadata_listassoc.sas
+ 39969446693003498      4 -rwxrwxrwx   1 root     root          3206 Apr  8 13:06 /mnt/c/temp/SAS_Data/Code/metadata_listattr.sas
+ 57983845202485611      4 -rwxrwxrwx   1 root     root           873 Mar 31 14:04 /mnt/c/temp/SAS_Data/Code/metadata_listobj.sas
+ 67835469387358920      4 -rwxrwxrwx   1 root     root          3383 Apr  8 11:48 /mnt/c/temp/SAS_Data/Code/metadata_listprop.sas
+ 58546795155907993      0 -rwxrwxrwx   1 root     root           416 Mar 31 13:55 /mnt/c/temp/SAS_Data/Code/metadata_listtyp.sas
+ 88946092640675844     24 -rwxrwxrwx   1 root     root         21504 Mar 31 14:24 /mnt/c/temp/SAS_Data/Code/sasmacr.sas7bcat
+ 34339947159116809      4 -rwxrwxrwx   1 root     root          1408 Mar 30 14:32 /mnt/c/temp/SAS_Data/Code/time_start.sas
+ 57983845202577575      4 -rwxrwxrwx   1 root     root          1408 Apr  6 12:38 /mnt/c/temp/SAS_Data/Code/time_stop.sas
+499618083661598267  70336 -rwxrwxrwx   1 root     root      72024064 Apr  3 10:26 /mnt/c/temp/SAS_Data/DETAIL0/bd_account_balance.sas7bdat
+ 79938893385937644 183296 -rwxrwxrwx   1 root     root     187695104 May  7 10:50 /mnt/c/temp/SAS_Data/DETAIL0/bd_csutomer.sas7bdat
+  7881299348252756 183296 -rwxrwxrwx   1 root     root     187695104 May  7 10:54 /mnt/c/temp/SAS_Data/DETAIL0/bd_customer.sas7bdat
+ 81909218222908679  89152 -rwxrwxrwx   1 root     root      91291648 Apr  3 10:26 /mnt/c/temp/SAS_Data/DETAIL0/bd_mtg_ead.sas7bdat
+  5066549581146364  75008 -rwxrwxrwx   1 root     root      76808192 Apr  3 10:26 /mnt/c/temp/SAS_Data/DETAIL0/bd_mtg_prod_balance.sas7bdat
+  6192449487988999    896 -rwxrwxrwx   1 root     root        917504 Apr  3 10:26 /mnt/c/temp/SAS_Data/DETAIL0/bd_postcode_region_lkup.sas7bdat
+  5629499534567671  28224 -rwxrwxrwx   1 root     root      28901376 Apr  3 10:26 /mnt/c/temp/SAS_Data/DETAIL0/bd_product.sas7bdat
+  8162774324963522  28224 -rwxrwxrwx   1 root     root      28901376 Apr  3 10:26 /mnt/c/temp/SAS_Data/DETAIL0/bd_rwa.sas7bdat
+635289022436039779   8320 -rwxrwxrwx   1 root     root       8519680 Apr  3 10:26 /mnt/c/temp/SAS_Data/DETAIL0/bd_uk_house_index.sas7bdat
+  7318349394831605   9344 -rwxrwxrwx   1 root     root       9568256 Apr  3 10:26 /mnt/c/temp/SAS_Data/DETAIL0/bd_uk_house_price_avg.sas7bdat
+ 55732045388842100    128 -rwxrwxrwx   1 root     root        131072 Apr  3 11:30 /mnt/c/temp/SAS_Data/DETAIL0/di_job_stats.sas7bdat
+ 81064793292754040    128 -rwxrwxrwx   1 root     root        131072 Apr  3 11:30 /mnt/c/temp/SAS_Data/DETAIL0/di_sched_stats.sas7bdat
+ 27303072741041126 2054912 -rwxrwxrwx   1 root     root     2104229888 Apr  3 11:24 /mnt/c/temp/SAS_Data/DETAIL0/unix_file_list_hist.sas7bdat
+ 16044073672533078       0 -rwxrwxrwx   1 root     root             20 Apr  8 09:05 /mnt/c/temp/SAS_Data/Lookups/date_loop_lkup.txt
+ 18858823440522315       0 -rwxrwxrwx   1 root     root            154 Jan 20 10:58 /mnt/c/temp/SAS_Data/Lookups/group_lkup.txt
+ 11540474046061599       0 -rwxrwxrwx   1 root     root              1 Mar 31 09:23 /mnt/c/temp/SAS_Data/Lookups/iterate_loop_lkup.txt
+ 15199648742709541     128 -rwxrwxrwx   1 root     root         131072 Mar 30 11:05 /mnt/c/temp/SAS_Data/M_CUST0/bd_merged_price_index_reg.sas7bdat
+117375065288429027  188864 -rwxrwxrwx   1 root     root      193396736 Jul  6 14:05 /mnt/c/temp/SAS_Data/M_CUST0/bd_merged_region_index.sas7bdat
+ 56013520365754297   94592 -rwxrwxrwx   1 root     root       96862208 Mar 30 11:16 /mnt/c/temp/SAS_Data/M_CUST0/bd_merged_region_index2.sas7bdat
+187462334489400607  294272 -rwxrwxrwx   1 root     root      301334528 Jul  6 14:05 /mnt/c/temp/SAS_Data/M_CUST0/bd_mrd_rwa_scored.sas7bdat
+ 14073748836559214  253696 -rwxrwxrwx   1 root     root      259784704 Jul  6 14:13 /mnt/c/temp/SAS_Data/M_CUST0/bd_mtg_merged.sas7bdat
+ 28428972647885697  134144 -rwxrwxrwx   1 root     root      137363456 Mar 27 13:13 /mnt/c/temp/SAS_Data/M_CUST0/bd_mtg_merged_region.sas7bdat
+103019841476189714  267840 -rwxrwxrwx   1 root     root      274268160 Jul  6 14:05 /mnt/c/temp/SAS_Data/M_CUST0/bd_mtg_merge_region.sas7bdat
+ 45317471250516369  284352 -rwxrwxrwx   1 root     root      291176448 Jul  6 14:05 /mnt/c/temp/SAS_Data/M_CUST0/bd_mtg_mrd.sas7bdat
+ 74309393851724839  253696 -rwxrwxrwx   1 root     root      259784704 Jun  8 14:33 /mnt/c/temp/SAS_Data/M_CUST0/coop_demo_output.sas7bdat
+118500965195275357      12 -rwxrwxrwx   1 root     root           8806 Apr 30 13:08 /mnt/c/temp/SAS_Data/M_PERF0/performance_testing_times.txt
+ 69805794224380855     512 -rwxrwxrwx   1 root     root         524288 Apr  7 14:10 /mnt/c/temp/SAS_Data/M_STGREP/snapshot_.sas7bdat
+ 34621422135521246 1011968 -rwxrwxrwx   1 root     root     1036255232 Apr  8 09:36 /mnt/c/temp/SAS_Data/M_STGREP/snapshot_01apr2020.sas7bdat
+ 57420895249085268   15872 -rwxrwxrwx   1 root     root       16252928 Apr  8 09:37 /mnt/c/temp/SAS_Data/M_STGREP/snapshot_02apr2020.sas7bdat
+ 23643898044558502   11008 -rwxrwxrwx   1 root     root       11272192 Apr  3 11:24 /mnt/c/temp/SAS_Data/M_STGREP/snapshot_list_fin.sas7bdat
+ 10977524091836580     128 -rwxrwxrwx   1 root     root         131072 Apr  7 13:11 /mnt/c/temp/SAS_Data/M_STGREP/temp_dates.sas7bdat
+ 32088147345400839   48928 -rwxrwxrwx   1 root     root       50102272 Jul  7 09:14 /mnt/c/temp/SAS_Data/M_VA0/objspawn_workspace_audit_table.sas7bdat
+  4222124651046696     192 -rwxrwxrwx   1 root     root         196608 Jul  7 09:02 /mnt/c/temp/SAS_Data/M_VA0/obspawn_data_log.sas7bdat
+ 73183493945157945    1792 -rwxrwxrwx   1 root     root        1835008 Jul  7 16:10 /mnt/c/temp/SAS_Data/M_VA0/snapshot_server_list.sas7bdat
+ 19984723346844970    3584 -rwxrwxrwx   1 root     root        3670016 Jul  7 14:39 /mnt/c/temp/SAS_Data/M_VA0/user_details_audit.sas7bdat
+ 21392098230095785   42084 -rwxrwxrwx   1 root     root       43094016 Jul  7 08:59 /mnt/c/temp/SAS_Data/M_VA0/ws_log_data_usage_audit.sas7bdat
+ 38843546786456731    3520 -rwxrwxrwx   1 root     root        3604480 Oct 16  2019 /mnt/c/temp/SAS_Data/ODD/all_user_dets_mybank.sas7bdat
+119063915148713319  343424 -rwxrwxrwx   1 root     root      351666176 Mar 26 16:26 /mnt/c/temp/SAS_Data/ODD/customers.sas7bdat
+428123439577045912     128 -rwxrwxrwx   1 root     root         131072 Apr  7 14:04 /mnt/c/temp/SAS_Data/ODD/date_extract_lkup.sas7bdat
+ 62205969853294781     128 -rwxrwxrwx   1 root     root         131072 Mar 31 10:34 /mnt/c/temp/SAS_Data/ODD/di_job_stats.sas7bdat
+  7036874418690305     128 -rwxrwxrwx   1 root     root         131072 Mar 31 11:25 /mnt/c/temp/SAS_Data/ODD/di_stats_out.sas7bdat
+ 84723967990162024     128 -rwxrwxrwx   1 root     root         131072 Mar 31 09:47 /mnt/c/temp/SAS_Data/ODD/iterate.sas7bdat
+  6473924464482242     128 -rwxrwxrwx   1 root     root         131072 Apr  6 12:38 /mnt/c/temp/SAS_Data/ODD/job_run_times.sas7bdat
+ 19984723346842949     832 -rwxrwxrwx   1 root     root         851968 Oct 15  2019 /mnt/c/temp/SAS_Data/ODD/last_snap.sas7bdat
+ 10133099161720754     128 -rwxrwxrwx   1 root     root         131072 Apr  6 12:38 /mnt/c/temp/SAS_Data/ODD/sched_run_times.sas7bdat
+125537839612977417       8 -rwxrwxrwx   1 root     root           5120 Jul  6 14:05 /mnt/c/temp/SAS_Data/ODD/temp_index.sas7bvew
+ 74590868829187043   15872 -rwxrwxrwx   1 root     root       16252928 Apr  3 11:24 /mnt/c/temp/SAS_Data/ODD/unix_file_list_full.sas7bdat
+ 11821949022772709     128 -rwxrwxrwx   1 root     root         131072 Mar 31 11:15 /mnt/c/temp/SAS_Data/ODD/w1l0znp.sas7bdat
+ 32932572275266160    9028 -rwxrwxrwx   1 root     root        9244359 Mar 27 11:23 /mnt/c/temp/SAS_Data/RAW/Data/Average-prices-2020-01.csv
+ 22517998136986084    5792 -rwxrwxrwx   1 root     root        5930100 Mar 27 11:27 /mnt/c/temp/SAS_Data/RAW/Data/Indices-2020-01.csv
+ 26458647810802843  225792 -rwxrwxrwx   1 root     root      231211008 Nov  6  2019 /mnt/c/temp/SAS_Data/RAW/Data/ms_call_centre_full.sas7bdat
+   844424931060987   16412 -rwxrwxrwx   1 root     root       16805039 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_AB.csv
+ 38562071809472095   22516 -rwxrwxrwx   1 root     root       23055360 Apr  7 11:47 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_AB.xls
+  3377699721456892    4684 -rwxrwxrwx   1 root     root        4795496 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_AL.csv
+  2251799814614270   25364 -rwxrwxrwx   1 root     root       25969777 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_B.csv
+  4785074605010176    8228 -rwxrwxrwx   1 root     root        8423206 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_BA.csv
+  1970324837903618    7780 -rwxrwxrwx   1 root     root        7964558 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_BB.csv
+  1970324837903620    9664 -rwxrwxrwx   1 root     root        9893767 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_BD.csv
+  1407374884482313    9172 -rwxrwxrwx   1 root     root        9390955 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_BH.csv
+  5066549581720851    5752 -rwxrwxrwx   1 root     root        5887302 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_BL.csv
+  3659174698167574   14480 -rwxrwxrwx   1 root     root       14826675 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_BN.csv
+  3659174698167575    4352 -rwxrwxrwx   1 root     root        4456405 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_BR.csv
+  2814749768035615   18756 -rwxrwxrwx   1 root     root       19204114 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_BS.csv
+  2251799814614314   24536 -rwxrwxrwx   1 root     root       25123685 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_BT.csv
+  5629499535142160    6708 -rwxrwxrwx   1 root     root        6867077 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_CA.csv
+  5629499535142171    7940 -rwxrwxrwx   1 root     root        8127727 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_CB.csv
+  6192449488563464   17864 -rwxrwxrwx   1 root     root       18290489 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_CF.csv
+  4222124651588802   10028 -rwxrwxrwx   1 root     root       10268243 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_CH.csv
+  2251799814614214   11248 -rwxrwxrwx   1 root     root       11516772 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_CM.csv
+  1688849861192877    7412 -rwxrwxrwx   1 root     root        7585826 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_CO.csv
+  3659174698167484    6112 -rwxrwxrwx   1 root     root        6257866 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_CR.csv
+  4222124651588799    8116 -rwxrwxrwx   1 root     root        8308539 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_CT.csv
+  6755399441984789   11616 -rwxrwxrwx   1 root     root       11891110 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_CV.csv
+  2533274791324898    5756 -rwxrwxrwx   1 root     root        5893391 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_CW.csv
+ 18295873487121671    5296 -rwxrwxrwx   1 root     root        5419407 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_DA.csv
+  3940649674878182    4744 -rwxrwxrwx   1 root     root        4857659 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_DD.csv
+ 12103423999487249   12496 -rwxrwxrwx   1 root     root       12792321 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_DE.csv
+ 11258999069355284    3248 -rwxrwxrwx   1 root     root        3324304 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_DG.csv
+  5910974511852720    4732 -rwxrwxrwx   1 root     root        4842794 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_DH.csv
+  5910974511852760    6896 -rwxrwxrwx   1 root     root        7061001 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_DL.csv
+  9288674232380654   11628 -rwxrwxrwx   1 root     root       11904502 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_DN.csv
+  8162774325538034    4024 -rwxrwxrwx   1 root     root        4120324 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_DT.csv
+  6473924465274146    5988 -rwxrwxrwx   1 root     root        6129184 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_DY.csv
+  5066549581720823   11584 -rwxrwxrwx   1 root     root       11860937 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_E.csv
+  8444249302248682    5240 -rwxrwxrwx   1 root     root        5361920 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_EC.csv
+  6192449488563406   13584 -rwxrwxrwx   1 root     root       13907188 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_EH.csv
+ 14636698789883084    5372 -rwxrwxrwx   1 root     root        5500471 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_EN.csv
+ 31806672369233065   11804 -rwxrwxrwx   1 root     root       12083502 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_EX.csv
+  2533274791324851    4036 -rwxrwxrwx   1 root     root        4132451 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_FK.csv
+ 18858823440542916    4140 -rwxrwxrwx   1 root     root        4236574 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_FY.csv
+  9007199255669962   19612 -rwxrwxrwx   1 root     root       20080926 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_G.csv
+ 12947848929619126   11796 -rwxrwxrwx   1 root     root       12078198 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_GL.csv
+ 13229323906329800   14748 -rwxrwxrwx   1 root     root       15100562 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_GU.csv
+ 12666373952908500    1364 -rwxrwxrwx   1 root     root        1396430 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_GY.csv
+  4785074605010128    7220 -rwxrwxrwx   1 root     root        7390878 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_HA.csv
+  6192449488563420    4432 -rwxrwxrwx   1 root     root        4538325 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_HD.csv
+ 12947848929619158    2668 -rwxrwxrwx   1 root     root        2730071 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_HG.csv
+ 30117822508969145    9032 -rwxrwxrwx   1 root     root        9248652 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_HP.csv
+ 11821949022776544    3268 -rwxrwxrwx   1 root     root        3343647 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_HR.csv
+  7599824372116698     460 -rwxrwxrwx   1 root     root         470132 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_HS.csv
+  7036874418695390    6364 -rwxrwxrwx   1 root     root        6513629 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_HU.csv
+  8162774325538002    3052 -rwxrwxrwx   1 root     root        3125131 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_HX.csv
+ 10696049115933932    4132 -rwxrwxrwx   1 root     root        4230416 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_IG.csv
+  7318349395406068    2452 -rwxrwxrwx   1 root     root        2509249 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_IM.csv
+  3940649674878184   11120 -rwxrwxrwx   1 root     root       11384172 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_IP.csv
+ 10133099162512637    4520 -rwxrwxrwx   1 root     root        4628143 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_IV.csv
+  5629499535142143    1440 -rwxrwxrwx   1 root     root        1472502 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_JE.csv
+  5910974511852772    5944 -rwxrwxrwx   1 root     root        6083247 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_KA.csv
+  2533274791324931    9256 -rwxrwxrwx   1 root     root        9476892 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_KT.csv
+  5910974511852806     888 -rwxrwxrwx   1 root     root         905706 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_KW.csv
+ 18014398510411019    5512 -rwxrwxrwx   1 root     root        5641634 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_KY.csv
+ 18295873487121676   17916 -rwxrwxrwx   1 root     root       18345646 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_L.csv
+  9851624185801998    6072 -rwxrwxrwx   1 root     root        6216949 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_LA.csv
+ 14355223813172485    1096 -rwxrwxrwx   1 root     root        1121712 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_LD.csv
+  4222124651588877   14296 -rwxrwxrwx   1 root     root       14635255 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_LE.csv
+  4785074605010191   10188 -rwxrwxrwx   1 root     root       10428788 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_LL.csv
+  9288674232380690    4928 -rwxrwxrwx   1 root     root        5045501 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_LN.csv
+ 16044073673436440   13168 -rwxrwxrwx   1 root     root       13481759 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_LS.csv
+  7599824372116746    4272 -rwxrwxrwx   1 root     root        4374102 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_LU.csv
+  7599824372116720   24180 -rwxrwxrwx   1 root     root       24759909 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_M.csv
+  7318349395406081    9100 -rwxrwxrwx   1 root     root        9315175 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_ME.csv
+ 10414574139223286    9404 -rwxrwxrwx   1 root     root        9628958 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_MK.csv
+  9851624185802009    4920 -rwxrwxrwx   1 root     root        5034038 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_ML.csv
+  8444249302248730   11996 -rwxrwxrwx   1 root     root       12280811 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_N.csv
+  1407374884482332   18616 -rwxrwxrwx   1 root     root       19060836 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_NE.csv
+ 11258999069355296   15408 -rwxrwxrwx   1 root     root       15774518 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_NG.csv
+  5910974511852830   10292 -rwxrwxrwx   1 root     root       10534990 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_NN.csv
+ 12947848929619229   12852 -rwxrwxrwx   1 root     root       13156954 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_NP.csv
+  9570149209091361   11620 -rwxrwxrwx   1 root     root       11898153 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_NR.csv
+  1688849861192998   10580 -rwxrwxrwx   1 root     root       10833789 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_NW.csv
+  5629499535142181    7296 -rwxrwxrwx   1 root     root        7470195 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_OL.csv
+  5066549581720868   14504 -rwxrwxrwx   1 root     root       14851476 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_OX.csv
+  4503599628299563    5440 -rwxrwxrwx   1 root     root        5566592 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_PA.csv
+  3659174698167597   16200 -rwxrwxrwx   1 root     root       16585764 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_PE.csv
+  1970324837903662    3104 -rwxrwxrwx   1 root     root        3178070 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_PH.csv
+  3659174698167587    9264 -rwxrwxrwx   1 root     root        9482452 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_PL.csv
+  4222124651588905   13576 -rwxrwxrwx   1 root     root       13899974 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_PO.csv
+  6192449488563496    8236 -rwxrwxrwx   1 root     root        8430944 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_PR.csv
+  5066549581720876   18940 -rwxrwxrwx   1 root     root       19391036 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_RG.csv
+  6755399441984807    9968 -rwxrwxrwx   1 root     root       10206000 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_RH.csv
+  1688849861193007    6244 -rwxrwxrwx   1 root     root        6391682 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_RM.csv
+   844424931061042   20460 -rwxrwxrwx   1 root     root       20947725 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_S.csv
+  1125899907771700   12312 -rwxrwxrwx   1 root     root       12607115 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SA.csv
+   844424931061046   14028 -rwxrwxrwx   1 root     root       14363005 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SE.csv
+  1125899907771704    6996 -rwxrwxrwx   1 root     root        7161303 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SG.csv
+  1970324837903664   10324 -rwxrwxrwx   1 root     root       10570032 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SK.csv
+  1125899907771699    6868 -rwxrwxrwx   1 root     root        7032193 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SL.csv
+  1688849861193019    2744 -rwxrwxrwx   1 root     root        2807081 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SM.csv
+  1688849861193013    8816 -rwxrwxrwx   1 root     root        9025656 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SN.csv
+  1688849861193015   16616 -rwxrwxrwx   1 root     root       17010710 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SO.csv
+  2251799814614321    4692 -rwxrwxrwx   1 root     root        4800912 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SP.csv
+  1688849861193017    3564 -rwxrwxrwx   1 root     root        3649439 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SR.csv
+   844424931061053    7116 -rwxrwxrwx   1 root     root        7286494 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SS.csv
+  1688849861193020    9348 -rwxrwxrwx   1 root     root        9569160 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_ST.csv
+  1688849861193018   15028 -rwxrwxrwx   1 root     root       15387483 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SW.csv
+   844424931061056    7136 -rwxrwxrwx   1 root     root        7304358 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_SY.csv
+  1970324837903682    6056 -rwxrwxrwx   1 root     root        6198038 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_TA.csv
+  5066549581720900    2192 -rwxrwxrwx   1 root     root        2243318 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_TD.csv
+  2814749768035649    3812 -rwxrwxrwx   1 root     root        3899613 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_TF.csv
+  1688849861193022   13404 -rwxrwxrwx   1 root     root       13724747 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_TN.csv
+  1688849861193032    5436 -rwxrwxrwx   1 root     root        5562483 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_TQ.csv
+  2251799814614345    6308 -rwxrwxrwx   1 root     root        6456445 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_TR.csv
+  1688849861193035    9464 -rwxrwxrwx   1 root     root        9690270 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_TS.csv
+  3659174698167621    8308 -rwxrwxrwx   1 root     root        8504098 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_TW.csv
+   844424931061069    4764 -rwxrwxrwx   1 root     root        4875098 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_UB.csv
+ 47287796088319299   16512 -rwxrwxrwx   1 root     root       16905099 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_W.csv
+  2533274791324998   10544 -rwxrwxrwx   1 root     root       10793479 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_WA.csv
+  1125899907771724    3092 -rwxrwxrwx   1 root     root        3166181 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_WC.csv
+  1970324837903695    6592 -rwxrwxrwx   1 root     root        6747419 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_WD.csv
+  5348024558431551    7532 -rwxrwxrwx   1 root     root        7709587 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_WF.csv
+  2814749768035655    3772 -rwxrwxrwx   1 root     root        3858793 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_WN.csv
+  1125899907771728    5144 -rwxrwxrwx   1 root     root        5265690 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_WR.csv
+  3377699721456970    6212 -rwxrwxrwx   1 root     root        6358066 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_WS.csv
+  1125899907771729    5860 -rwxrwxrwx   1 root     root        5999693 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_WV.csv
+  1688849861193038   14404 -rwxrwxrwx   1 root     root       14748268 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_YO.csv
+  1125899907771730     316 -rwxrwxrwx   1 root     root         322468 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/multi_csv/NSPL_NOV_2019_UK_ZE_GEORGE.csv
+  1688849861193045 1095252 -rwxrwxrwx   1 root     root     1121536031 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/NSPL_NOV_2019_UK.csv
+  1125899907771731  836816 -rwxrwxrwx   1 root     root      856896300 Nov 14  2019 /mnt/c/temp/SAS_Data/RAW/Data/NSPL_NOV_2019_UK.txt
+  7881299348579022     512 -rwxrwxrwx   1 root     root         522558 Mar 27 12:55 /mnt/c/temp/SAS_Data/RAW/Data/Postcode\ districts.csv
+ 10696049115868110   39720 -rwxrwxrwx   1 root     root       40672156 Jan 17 11:24 /mnt/c/temp/SAS_Data/RAW/Data/sas_files.txt
+ 43910096367725081   31272 -rwxrwxrwx   1 root     root       32018803 Jan 17 17:11 /mnt/c/temp/SAS_Data/RAW/Data/sas_files_lslu.txt
+ 49258120924755190      64 -rwxrwxrwx   1 root     root          36864 Jul  7 16:16 /mnt/c/temp/SAS_Data/RAW/storage/sas_files.txt
+ 98234766872048266   53504 -rwxrwxrwx   1 root     root       54788096 Mar 26 16:16 /mnt/c/temp/SAS_Data/STAGING/customers_stg.sas7bdat
+ 18577348463013991   52160 -rwxrwxrwx   1 root     root       53411840 Mar 26 16:26 /mnt/c/temp/SAS_Data/STAGING/customer_stg.sas7bdat

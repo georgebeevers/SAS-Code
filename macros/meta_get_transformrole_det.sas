@@ -14,12 +14,12 @@
 /*  VERSION CONTROL		                                                         							 */
 /*  V1.0 15/12/2020 INITIAL VERSION GEORGE BEEVERS                                 							 */
 /* --------------------------------------------------------------------------------------------------------- */
-options nosymbolgen nomprint nomlogic;
+/*options nosymbolgen nomprint nomlogic;*/
 
 /*options symbolgen mprint mlogic;*/
 /*%put &omsid1;*/
 /*Macro to read all job transformrole by step*/
-%macro get_job_transformrole_det();
+%macro get_job_transformrole_det(table=);
 	/*Get a list of the jobs in metadata*/
 	%meta_extractjobs(table=job_list);
 
@@ -116,11 +116,11 @@ options nosymbolgen nomprint nomlogic;
 				where a.assoc="Properties" and propertyname ="Class";
 		quit;
 
-		%if %sysfunc(exist(job_transformrole)) %then
+		%if %sysfunc(exist(&table.)) %then
 			%do;
 				/*Create DataSet Info Table*/
 				proc sql;
-					insert into job_transformrole
+					insert into &table.
 						select * from stop_truncation;
 				quit;
 
@@ -128,7 +128,7 @@ options nosymbolgen nomprint nomlogic;
 		%else
 			%do;
 
-				data job_transformrole;
+				data &table.;
 					set stop_truncation;
 				run;
 

@@ -1,7 +1,7 @@
 /*Testing Options*/
 /*Macro Needed = getfilelist.sas*/
 /*options symbolgen mlogic mprint;*/
-%macro load_data_audit_files(outtbl=,history=);
+%macro object_spawner_logs(outtbl=,history=);
 /*Get the SAS Config directory and create a date hisotry macro variable*/
 	data _null_;
 		folder="%sysfunc(getoption(SASINITIALFOLDER))";

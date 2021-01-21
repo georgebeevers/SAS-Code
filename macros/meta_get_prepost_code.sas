@@ -16,7 +16,7 @@
 /* --------------------------------------------------------------------------------------------------------- */
 /*Testing options*/
 /*options symbolgen mlogic mprint;*/
-%macro get_pre_post_code(trantype=);
+%macro get_pre_post_code(trantype=, table=);
 	%meta_extractjobs(table=job_list);
 
 	proc sql;
@@ -113,11 +113,11 @@
 				from _JOBACTIVITIES_ASSOC&a.;
 		quit;
 
-		%if %sysfunc(exist(&label.)) %then
+		%if %sysfunc(exist(&table.)) %then
 			%do;
 				/*Create DataSet Info Table*/
 				proc sql;
-					insert into &label.
+					insert into &table.
 						select * from keep_data
 							where assoc ="SourceCode";
 				quit;
@@ -126,7 +126,7 @@
 		%else
 			%do;
 
-				data &label.;
+				data &table.;
 					set keep_data;
 					where assoc ="SourceCode";
 				run;
