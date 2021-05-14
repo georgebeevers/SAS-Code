@@ -12,34 +12,10 @@
 /*  testing the setup or when log managemen is in place.													 */
 /*  SERIES = Set the series to increment depending on the number of files to read in. Each file will have    */
 /*  _{1-9} assigned to the end. Merging can then be done quickly and easily without multiple file names		 */
-/*  EMPTY_FILES = This flag allows workspace server logs which have no records to be printed to the final	 */
-/*  table. The default is set to N but when Y is entered the results appear in the dataset. This can be used */
-/*  to highlight session which have not processed any data. Check any XML logger filters which are in place  */
 /* --------------------------------------------------------------------------------------------------------- */
-/*%let macro_location=C:\temp\GIT\SAS-Code\macros;*/
-/*%include 'C:\temp\GIT\SAS-Code\macros\clean_up.sas';*/
-/*%include "'&macro_location\get_obscnt.sas'";*/
-/*%include "'&macro_location\getfilelist.sas'";*/
-%macro workspace_Server_logs(outtbl=,history=,config_location=,series=1,empty_files=N);
-/*============================================================================================================*/
-/* OUT TABLE NAME CHECK					                                    								  */
-/*============================================================================================================*/
-/*------------------------------------------------------------------------------------------------------------*/
-/* DESCRIPTION                                                   								  	  		  */
-/* If the outtbl value has not been set then the process will use DATA_AUDIT_FINAL as the table name. It	  */
-/* performs a length check on the name and when 0 it takes this as no named has been provided to override the */
-/* default																									  */
-/*------------------------------------------------------------------------------------------------------------*/
-%if %length(&outtbl)=0 %then
-	%do;
-		%let outtbl=data_audit_final;
-	%end;
-%else;
-%do;
-	%put Using &outtbl as set in the macro;
-%end;
-%if /*&series=1 and */%sysfunc(exist(&outtbl._&series.)) %then %do;
-  proc delete data=&outtbl._&series.; run;
+%macro connect_spawn_log_read(outtbl=,history=,config_location=,series=1);
+%if &series=1 and %sysfunc(exist(&outtbl._&series.)) %then %do;
+  proc delete data=&outtbl; run;
 %end;
 /*============================================================================================================*/
 /* ENVIRONMENT CHECK					                                    								  */
@@ -67,7 +43,20 @@
 %end;
 
 %end_os_step:;
-
+/*============================================================================================================*/
+/* OBTAIN INITIALISATION FOLDER			                                    								  */
+/*============================================================================================================*/
+/*------------------------------------------------------------------------------------------------------------*/
+/* DESCRIPTION                                                   								  	  		  */
+/* Using the initialisation option as the base and then applying the OS set delimiter the correct folder	  */
+/* for the logs can be automatically generated. Using the config_location option this default location can be */
+/* changed. This will allow testing and setup to be easier.													  */
+/*------------------------------------------------------------------------------------------------------------*/
+data _null_;
+	folder="%sysfunc(getoption(SASINITIALFOLDER))";
+	CALL SCAN( "%sysfunc(getoption(SASINITIALFOLDER))", -2, last_pos, last_length, "&os_set_delim", 'l');
+	call symput("sas_config",substrn( "%sysfunc(getoption(SASINITIALFOLDER))", 1, last_pos + last_length -1));
+run;
 /*============================================================================================================*/
 /* HISTORY REQUIREMENT					                                    								  */
 /*============================================================================================================*/
@@ -87,35 +76,36 @@
 %end;
 %else %do;
 %put NOTE: HISTORY FLAG NOT SET;
-%put NOTE: ALL FILES WILL BE READ IN %sysfunc(getoption(SASINITIALFOLDER))\WorkspaceServer\AuditLogs ;
+%put NOTE: ALL FILES WILL BE READ IN %sysfunc(getoption(SASINITIALFOLDER))&os_set_delim.ConnectSpawner&os_set_delim.Logs ;
 
 %end;
+
 /*============================================================================================================*/
 /* GET FILE LIST						                                    								  */
 /*============================================================================================================*/
 /*------------------------------------------------------------------------------------------------------------*/
 /* DESCRIPTION                                                   								  	  		  */
 /* This section will use the %getfilelist macro to obtain a list of all file in a certian location. The    	  */
-/* process will set the location useing the SASINITIALFOLDER option and then the default log location as 	  */
-/* set in the LOGCONFIG.XML. 																			  	  */
+/* process will set the location using the SASINITIALFOLDER option. This option can be used if a testing 	  */
+/* lcoation or monthly snapshot location are being used to manage the logs								  	  */
 /*------------------------------------------------------------------------------------------------------------*/
-
-/*Read in a list of the logs to extract information from*/
-%if %length(&config_location)>0 %then %do;
-%getfilelist(
-	Path=&config_location,
-	Table=work.workspace_logs,
-	Typefilter=log
-	);
+%if %length(&config_location)>0 %then
+	%do;
+		%getfilelist(
+			Path=&config_location,
+			Table=work._logs_connect,
+			Typefilter=log
+			);
 	%end;
-%if %length(&config_location)=0 %then %do;
-%getfilelist(
-	Path=%sysfunc(getoption(SASINITIALFOLDER))&os_set_delim.WorkspaceServer&os_set_delim.AuditLogs,
-	Table=work.workspace_logs,
-	Typefilter=log
-	);
-%end;
-/*	Date*/
+
+%if %length(&config_location)=0 %then
+	%do;
+		%getfilelist(
+			Path=&sas_config.&os_set_delim.ConnectSpawner&os_set_delim.Logs,
+			Table=work._logs_connect,
+			Typefilter=log
+			);
+	%end;
 /*------------------------------------------------------------------------------------------------------------*/
 /* SUB STEP	1: CHECK HISTORY																				  */
 /*------------------------------------------------------------------------------------------------------------*/
@@ -125,9 +115,9 @@
 %if %eval(&history+0) = 0 %then
 	%do;
 
-		proc sql;
+		proc sql noprint;
 			select min(datepart(created)) format=date9. into: dt_hist
-				from workspace_logs;
+				from _logs_connect;
 		quit;
 
 		%put &dt_hist.;
@@ -140,11 +130,9 @@
 /* and those which are marked as "File". This avoids empty files and unexpected file extentions being read	  */
 /*------------------------------------------------------------------------------------------------------------*/
 data readlogs;
-	set workspace_logs;
-	where membername like 'data_audit%'
-		and Filesize > 0 and datepart(created)>="&dt_hist."d and entrytype ="File";
+	set _logs_connect;
+	where Filesize > 0 and datepart(created)>="&dt_hist."d and entrytype ="File";
 run;
-
 /*------------------------------------------------------------------------------------------------------------*/
 /* SUB STEP	3: CHECK FOR ZERO OBSERVATIONS																	  */
 /*------------------------------------------------------------------------------------------------------------*/
@@ -168,123 +156,109 @@ run;
 /* Set the macro variables for usage in the loop. The variable will contain the full path to the file. It is  */
 /* used on the infile statement.																			  */
 /*------------------------------------------------------------------------------------------------------------*/
-
 proc sql noprint;
-	select fullname into:audit_load1 - 
-		from readlogs;
+	select fullname 
+		into:connect_log1 - 
+	from readlogs;
 quit;
-
 /*============================================================================================================*/
-/* READ WORKSPACE LOG LOOP				                                    								  */
+/* READ CONNECT LOG LOOP				                                    								  */
 /*============================================================================================================*/
 /*------------------------------------------------------------------------------------------------------------*/
 /* DESCRIPTION                                                   								  	  		  */
 /* This section will now read in the data from the various logs and then combine into one final table		  */
 /*------------------------------------------------------------------------------------------------------------*/
-	%do i=1 %to %get_obscnt(readlogs);
-		data _audit_data_log&i.;
+%do i=1 %to %get_obscnt(readlogs);
+data _connect_spawner_log&i.;
 /*------------------------------------------------------------------------------------------------------------*/
 /* Set the length, format and label of the required variables												  */
 /*------------------------------------------------------------------------------------------------------------*/
-			attrib  Hostname  length=$100  label='Hostname'
-					DateTime  length=$100  label='Session Date Time Char'
-					DTTM length=8. format=datetime20. label='Date Time Numeric'
-					date length=8. format=date9. label='Date'
-					time length=8. format=time10. label='Time'
-					Userid  length=$50  label='User ID'
-					Action  length=$50  label='Dataset Action'
-					Status  length=$50  label='Status'
-					Libref  length=$50  label='Libref'
-					Engine  length=$50  label='SAS Engine'
-					Member  length=$50  label='Member Name'
-					MemberType  length=$50  label='Member Type'
-					Openmode  length=$50  label='Open Mode'
-					Path  length=$200  label='Path'
-					Message  length=$100  label='Message'
-					fullpath  length=$200  label='Full Path'
-					logfile  length=$200  label='Log File'
-					logname  length=$100  label='Batch Log Name'
-					sysin  length=$100  label='Batch Code Name'
-					PID length=4. label='Process Identifier'
-					returncode length=4. label='Return Code';
-/*------------------------------------------------------------------------------------------------------------*/
-/* EMPTY FILES																								  */
-/*------------------------------------------------------------------------------------------------------------*/
-/* Conditional logic to allow a record to be printed to the file for workspace logs which contain no ouptut.  */
-/* This flag can be used when you want to check session which have done no processing. You woudl need to check*/
-/* what is present in the XML logger filters sessions. If WORK is filtered out then it may appear that no	  */
-/* activity occured but it was the filter stopping the recording.											  */
-/*------------------------------------------------------------------------------------------------------------*/
-			%if &empty_files=Y %then %do;
-			if (eof and _N_=1) then do;
-			Hostname="EMPTY_FILE";
-			date=input(scan("&&audit_load&i.",-3,"_"),yymmdd10.);
-			logfile="&&audit_load&i.";
-			PID=scan(scan("&&audit_load&i.",-1,"_"),1);
-			output ;
-			end;
-			%end;
+attrib  
+	application length=$30 label='Application'
+	Hostname  length=$100  label='Hostname'
+	DTTM length=8. format=datetime20. label='Date Time Numeric'
+	date length=8. format=date9. label='Date'
+	time length=8. format=time10. label='Time'
+	Userid  length=$50  label='User ID'
+	PID length=4. label='Process Identifier'
+	logname  length=$100  label='Batch Log Name';
 /*------------------------------------------------------------------------------------------------------------*/
 /* INFILE STATEMENT																							  */
 /*------------------------------------------------------------------------------------------------------------*/
 /* Set the location to the log to read and start on the second line so that the labels are ignored			  */
 /*------------------------------------------------------------------------------------------------------------*/
-			infile "&&audit_load&i." dlm="|" missover firstobs=2 end=eof;
-			input Hostname DateTime Userid Action Status Libref Engine Member MemberType Openmode Path;
+	infile "&&connect_log&i." dlm=":" missover firstobs=3;
+	RETAIN application dttm date time PID logname userid hostname;
+	input;
+/*------------------------------------------------------------------------------------------------------------*/
+/* APPLICATION																								  */
+/*------------------------------------------------------------------------------------------------------------*/
+/* Unlike the object spawner logs the application name for Base SAS is not captured. As all Base SAS can be   */
+/* be identified by standard markers this will be set manually when the relevant criteria is met			  */  
+/*------------------------------------------------------------------------------------------------------------*/
+	application="BASE";
+/*------------------------------------------------------------------------------------------------------------*/
+/* LOGNAME																								  	  */
+/*------------------------------------------------------------------------------------------------------------*/
+/* Print from the looping macro																				  */
+/*------------------------------------------------------------------------------------------------------------*/
+	logname="&&connect_log&i.";
+/*------------------------------------------------------------------------------------------------------------*/
+/* FIND																										  */
+/*------------------------------------------------------------------------------------------------------------*/
+/* The loop will look for all connections which have "successfully authenticated" in the string. When this is */
+/* found then the values extracted are retained. Only when a PID is present is the line output				  */  
+/*------------------------------------------------------------------------------------------------------------*/
+	if find(_infile_,"successfully authenticated") then
+		do;
 /*------------------------------------------------------------------------------------------------------------*/
 /* DATES																									  */
 /*------------------------------------------------------------------------------------------------------------*/
 /* Convert VARCHAR26 system datetimes to ones that SAS understand using E8601DT23.3			  				  */
 /*------------------------------------------------------------------------------------------------------------*/
-			dttm = input(scan(_infile_,2,'|'),e8601dt23.3);
-			date = datepart(input(scan(_infile_,2,'|'),e8601dt23.3));
-			time = timepart(input(scan(_infile_,2,'|'),e8601dt23.3));
+	dttm = input(scan(_infile_,1,','),e8601dt23.3);
+	date = datepart(input(scan(_infile_,1,'|'),e8601dt23.3));
+	time = timepart(input(scan(_infile_,1,'|'),e8601dt23.3));
 /*------------------------------------------------------------------------------------------------------------*/
-/* FULLPATH																									  */
+/* USERID & HOSTNAME																						  */
 /*------------------------------------------------------------------------------------------------------------*/
-/* Create the full path to the SAS datasets used in the process								  				  */
+/* Extract userid and hostname from the string. In large installations there may be more than one server that */
+/* that BASE SAS sessions are started. This will allow all to be captured.									  */
 /*------------------------------------------------------------------------------------------------------------*/
-			fullpath=trim(right(scan(_infile_,11,'|')))||("&os_set_delim")||trim(left(scan(_infile_,8,"|")))||".sas7bdat";
+	userid = compress(scan(_infile_,10," "),'"');
+	hostname=scan(_infile_,12," ");
+	end;
 /*------------------------------------------------------------------------------------------------------------*/
-/* ERROR MESSAGE																							  */
+/* PID																						  */
 /*------------------------------------------------------------------------------------------------------------*/
-/* Error message is the code failed. 0 will return no message								  				  */
+/* Identify when a PID is present and then output the row. If not PID is present then the session has not	  */
+/* started correctly on the server.																			  */
 /*------------------------------------------------------------------------------------------------------------*/
-			message=scan(_infile_,13,"|");
-/*------------------------------------------------------------------------------------------------------------*/
-/* LOG FILE LOCATION																						  */
-/*------------------------------------------------------------------------------------------------------------*/
-/* Location of the log file being read														  				  */
-/*------------------------------------------------------------------------------------------------------------*/
-			logfile="&&audit_load&i.";
-/*------------------------------------------------------------------------------------------------------------*/
-/* PROCESS ID																								  */
-/*------------------------------------------------------------------------------------------------------------*/
-/* Extract the process ID from the string. Check in the XML how the string is created. If this variable is	  */
-/* is missing then it may be that the file creation string contains more information and you may need to 	  */
-/* adjust the number of underscores (_) on the scan function											      */
-/*------------------------------------------------------------------------------------------------------------*/
-/*			PID=input(tranwrd(scan("&&audit_load&i.",7,"_"),".log"," "),8.);*/
-			PID=scan(scan("&&audit_load&i.",-1,"_"),1);
-/*------------------------------------------------------------------------------------------------------------*/
-/* RETURN CODE																								  */
-/*------------------------------------------------------------------------------------------------------------*/
-/* Anything greater than 0 means the step failed and the message column will be populated	  				  */
-/*------------------------------------------------------------------------------------------------------------*/
-			returncode=input(scan(_infile_,12,"|"),8.);
-/*------------------------------------------------------------------------------------------------------------*/
-/* BATCH VARIABLES																							  */
-/*------------------------------------------------------------------------------------------------------------*/
-/* If the process has been submitted in batch then -log and -sysin have been used and the information 		  */
-/* recorded in thje log output. Interactive session will be missing										      */
-/*------------------------------------------------------------------------------------------------------------*/
-			logname=scan(_infile_,21,"|");
-			sysin=scan(_infile_,22,"|");
+	if find(_infile_,"PID") then
+		do;
+			PID=input(scan(_infile_,14),8.);
 			output;
-		run;
+		end;
+	run;
 
-/*	%end;*/
-
+%end;
+/*============================================================================================================*/
+/* OUT TABLE NAME CHECK					                                    								  */
+/*============================================================================================================*/
+/*------------------------------------------------------------------------------------------------------------*/
+/* DESCRIPTION                                                   								  	  		  */
+/* If the outtbl value has not been set then the process will use DATA_AUDIT_FINAL as the table name. It	  */
+/* performs a length check on the name and when 0 it takes this as no named has been provided to override the */
+/* default																									  */
+/*------------------------------------------------------------------------------------------------------------*/
+%if %length(&outtbl)=0 %then
+	%do;
+		%let outtbl=connect_spawner_final;
+	%end;
+%else;
+%do;
+	%put Using &outtbl as set in the macro;
+%end;
 /*============================================================================================================*/
 /* STACKED FINAL TABLE					                                    								  */
 /*============================================================================================================*/
@@ -292,27 +266,9 @@ quit;
 /* DESCRIPTION                                                   								  	  		  */
 /* All of the individual datasets will now be stacked into one final table as set by the OUTTBL variable	  */
 /*------------------------------------------------------------------------------------------------------------*/
-	/*Combine all temporary files into a final table*/
-/*	data &outtbl._&series.;*/
-/*		set _audit_data:;*/
-/*	run;*/
-%if %sysfunc(exist(&outtbl._&series.)) %then
-	%do;
-
-proc append data=_audit_data_log&i. base=&outtbl._&series.;
-run;
-	%end;
-%else
-	%do;
-
-	data &outtbl._&series.;
-		set _audit_data_log&i.;
-	run;		
-
-	%end;
-/*Delete Temp Tables*/
-%clean_up(_audit_data_log&i.);
-	%end;
+     data &outtbl._&series.;
+           set _connect_spawner_log:;
+     run;
 /*============================================================================================================*/
 /* CONDITIONAL EXIT: EXIT_NOW_NO_OBS	                                    								  */
 /*============================================================================================================*/
@@ -321,7 +277,9 @@ run;
 /* If "SUB STEP	3: CHECK FOR ZERO OBSERVATIONS"	detects no observations it will gracefully exit the process at*/
 /* this line.																								  */
 /*------------------------------------------------------------------------------------------------------------*/
-
+%exit_now_no_obs:
+%put NOTE: PROCESSING HAS CONDITIONALLY STOPPED DUE TO ZERO OBSERVATIONS DETECTED;
+%put NOTE: PLEASE CHECK WORK.READLOGS TO RESOLVE THE ISSUE AND THEN RESUBMIT;
 /*============================================================================================================*/
 /* CLEAN UP								                                    								  */
 /*============================================================================================================*/
@@ -330,33 +288,15 @@ run;
 /* The final step in the macro is to clean up any of the temporary tables created. Warning may be generated	  */
 /* if the macro exits early. Check the log, code comments and usage guide to resolve before submitting again  */
 /*------------------------------------------------------------------------------------------------------------*/
-proc datasets lib=work nolist;
-/*	delete _audit_data:;*/
-	delete workspace_logs;
-	delete readlogs;
-run;
-%exit_now_no_obs:
-%put NOTE: PROCESSING HAS CONDITIONALLY STOPPED DUE TO ZERO OBSERVATIONS DETECTED;
-%put NOTE: PLEASE CHECK WORK.READLOGS TO RESOLVE THE ISSUE AND THEN RESUBMIT;
+     proc datasets lib=work nolist;
+           delete _connect_spawner_log:;
+		   delete _logs_connect;
+		   delete readlogs;
+     run;
+
 %mend;
-/*%workspace_server_logs;*/
-/*%workspace_server_logs(series=2,config_location=C:\SAS\Config\Lev1\SASApp\WorkspaceServer\AuditLogs\old);*/
-/*proc sql;*/
-/*create table pid_miss as*/
-/*select * from readlogs*/
-/*where membername="data_audit_sukgeb_local@sukgeb_20200915_sukgeb_22792.log";*/
-/*quit;*/
-/*data_audit_sukgeb_local@sukgeb_20200710_sukgeb_23492.log*/
-/*data_audit_sassrv@sukgeb_20200715_sukgeb_25452.log*/
-/*%workspace_server_logs(outtbl=george);*/
-/*%workspace_server_logs(series=2);*/
-/*%workspace_server_logs(series=2,config_location=C:\SAS\Config\Lev1\SASApp\WorkspaceServer\AuditLogs\old);*/
-/*%workspace_server_logs(series=3,config_location=C:\SAS\Config\Lev1\SASApp\WorkspaceServer\AuditLogs\temp);*/
-/*%workspace_server_logs(series=3,config_location=C:\SAS\Config\Lev1\SASApp\ConnectServer\AuditLogs);*/
-
-
-
-
-
+/*%connect_spawn_log_read;*/
+/*%connect_spawn_log_read(outtbl=connect_server_logs, config_location=C:\SAS\Config\Lev1\ConnectSpawner\Logs\temp);*/
+/*%connect_spawn_log_read(config_location=C:\SAS\Config\Lev1\ConnectSpawner\Logs\temp);*/
 
 

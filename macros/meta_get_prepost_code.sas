@@ -69,7 +69,7 @@
 
 		%end;
 
-	%do a=1 %to %get_obscnt(uniq_jobs);
+	%do a=1 %to 10/*%get_obscnt(uniq_jobs)*/;
 		%metadata_transassoc(omsobj=OMSOBJ:JOB\&&omsid&a., out_ref=WORK._JOB_TOP_LEVEL_ASSOC);
 
 		proc sql;
@@ -167,5 +167,5 @@ run;
 /*%get_pre_post_code(trantype=TransformationSources);*/
 /*%get_pre_post_code(trantype=TransformationTargets);*/
 
-/*%get_pre_post_code(trantype=TransformationSources,label=PRECODE,tablename=preprocess_code);*/
-/*%get_pre_post_code(trantype=TransformationTargets,label=POSTCODE,tablename=postprocess_code);*/
+%get_pre_post_code(trantype=TransformationSources,table=preprocess_code);
+%get_pre_post_code(trantype=TransformationTargets,table=postprocess_code);

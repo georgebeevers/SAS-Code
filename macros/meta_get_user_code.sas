@@ -47,7 +47,7 @@ run;
 		/*where id="A5VMVDCA.BP0000RU";*/
 	quit;
 
-	%do c=1 %to %get_obscnt(uniq_jobs);
+	%do c=1 %to 2/*%get_obscnt(uniq_jobs)*/;
 		%metadata_transassoc(omsobj=OMSOBJ:JOB\&&omsid&c., out_ref=WORK._JOB_TOP_LEVEL_ASSOC);
 
 		/*** Filter to keep just the jobactivities (there should only be one per Job unless the metadata is dodgy ***/
@@ -234,6 +234,7 @@ run;
 		delete uniq_jobs
 			run;
 %mend;
+%meta_get_user_code(table=user_Code);
 
 /*%meta_get_user_code;*/
 /*%meta_get_user_code(path=C:\temp\LSF\Code\meta_sourcecode);*/

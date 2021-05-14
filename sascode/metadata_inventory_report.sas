@@ -11,7 +11,7 @@
 /* --------------------------------------------------------------------------------------------------------- */
 /*  VERSION CONTROL	                         																 */
 /*  Version 	Date 		Name 			Description                                 					 */
-/*  1.0 		31-07-2020 	George Beevers  Iniital Release                                					 */
+/*  1.0 		31-07-2020 	George Beevers  Initial Release                                					 */
 /* --------------------------------------------------------------------------------------------------------- */
 /*============================================================================================================*/
 /* SETUP REQUIREMENT				                                    								  	  */
@@ -27,7 +27,38 @@
 /*libname mymacs "&macpath.";*/
 /*options mstored sasautos=(sasautos,"&macpath");*/
 
-%include "C:\temp\GIT\macros\*";
+%let macpath=C:\temp\GIT\SAS-Code\macros;
+
+%include "&macpath.\mm_getrepos.sas";
+%include "&macpath.\mm_getservercontexts.sas";
+%include "&macpath.\meta_server_architecture.sas";
+%include "&macpath.\meta_extractgroups.sas";
+%include "&macpath.\meta_extractusers.sas";
+%include "&macpath.\mm_getobjects.sas";
+%include "&macpath.\mf_getuniquefileref.sas";
+%include "&macpath.\mm_getdetails.sas";
+%include "&macpath.\meta_extractroles.sas";
+%include "&macpath.\mm_getauthinfo.sas";
+%include "&macpath.\meta_extractlibraries.sas";
+%include "&macpath.\meta_extractdirectories.sas";
+%include "&macpath.\meta_extractexternalfiles.sas";
+%include "&macpath.\meta_extracttables.sas";
+%include "&macpath.\meta_extractfolders.sas";
+%include "&macpath.\meta_extractjobtables.sas";
+%include "&macpath.\meta_extractjob.sas";
+%include "&macpath.\meta_extractjobs.sas";
+%include "&macpath.\meta_extractjobtransformations.sas";
+%include "&macpath.\meta_extractnotes.sas";
+%include "&macpath.\meta_extractprompts.sas";
+%include "&macpath.\meta_extractuwtransformations.sas";
+%include "&macpath.\meta_extractminingresults.sas";
+%include "&macpath.\meta_extractcubes.sas";
+%include "&macpath.\meta_extractvaexplorations.sas";
+%include "&macpath.\meta_extractinfomaps.sas";
+%include "&macpath.\meta_extractstoredprocesses.sas";
+%include "&macpath.\meta_extractreports.sas";
+%include "&macpath.\options_remember.sas";
+%include "&macpath.\options_reset.sas";
 
 /*CHANGE REPORT LOCATION*/
 %let report_location=c:\temp;
@@ -515,6 +546,6 @@ libname xlout clear;
 %report_flag(flag=&xlsx_report_flag.);
 
 /*Clean Up */
-proc datasets lib=work;
-mm_G:;
+proc datasets lib=work nolist;
+delete MM_G:;
 run;

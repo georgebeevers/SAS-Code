@@ -117,6 +117,6 @@ options linesize=256 nomlogic nomprint nonotes pagesize=1024 nosymbolgen;
 %options_reset(options=linesize mlogic mprint notes pagesize symbolgen, options_id=sys_check_permissions, put=N);
 
 %mend;
-/*
-%meta_extractlibraries(Table=Libraries);
-*/
+
+
+
