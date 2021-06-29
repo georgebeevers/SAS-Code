@@ -81,7 +81,7 @@
 %end;
 
 /*Check the macro variables*/
-	%put &sas_config;
+/*	%put &sas_config;*/
 /*	%put &dt_hist.;*/
 /*Read in a list of object spawner logs*/
 /*============================================================================================================*/
@@ -139,7 +139,7 @@
 		set _logs_object;
 		where membername like 'Object%'
 			and Filesize > 0
-			and datepart(updated)>="&dt_hist."d and entrytype ="File";
+			/*and datepart(updated)>="&dt_hist."d*/ and entrytype ="File";
 	run;
 /*------------------------------------------------------------------------------------------------------------*/
 /* SUB STEP	3: CHECK FOR ZERO OBSERVATIONS																	  */
@@ -242,7 +242,7 @@ logname="&&audit_load&i.";
 /*------------------------------------------------------------------------------------------------------------*/
 	if find(_infile_,"Launched process") then
 		do;
-			PID=input(scan(_infile_,19),8.);
+			PID=input(scan(_infile_,20),8.);
 			output;
 		end;
 		run;

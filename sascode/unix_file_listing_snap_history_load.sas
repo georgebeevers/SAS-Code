@@ -52,9 +52,9 @@ libname detail0 "C:\temp\SAS_Data\server_metrics\detail0";
 /* shell escape is possible (XMCD) then ssh=Y can be set as a parameter and the output would be piped directly*/
 /* into SAS. Filepath woudl not be needed as a parameter.													  */
 /*------------------------------------------------------------------------------------------------------------*/
-%unix_file_list(/mnt/c/temp/,filepath=C:\temp\file_listing\sas_files_1.txt);
-%unix_file_list(/mnt/c/temp/,filepath=C:\temp\file_listing\sas_files_2.txt,series=2);
-%unix_file_list(/mnt/c/temp/,filepath=C:\temp\file_listing\sas_files_3.txt,series=3);
+%unix_file_list(/anenv/prd/cads/cads1/,filepath=C:\temp\hsbc\input\sas_files_cads1_1.txt);
+/*%unix_file_list(/anenv/prd/cads/cads1/,filepath=C:\temp\hsbc\input\sas_files_cads1_2.txt,series=2);*/
+/*%unix_file_list(/mnt/c/temp/,filepath=C:\temp\hsbc\input\sas_files_3.txt,series=3);*/
 
 /*============================================================================================================*/
 /* LOAD LSLU (ACCESS TIME) LISTINGS		                                   								  	  */
@@ -68,9 +68,9 @@ libname detail0 "C:\temp\SAS_Data\server_metrics\detail0";
 /* shell escape is possible (XMCD) then ssh=Y can be set as a parameter and the output would be piped directly*/
 /* into SAS. Filepath woudl not be needed as a parameter.													  */
 /*------------------------------------------------------------------------------------------------------------*/
-%unix_file_list(/mnt/c/temp/,filepath=C:\temp\file_listing\sas_files_lslu_1.txt,atime=Y);
-%unix_file_list(/mnt/c/temp/,filepath=C:\temp\file_listing\sas_files_lslu_2.txt,atime=Y,series=2);
-%unix_file_list(/mnt/c/temp/,filepath=C:\temp\file_listing\sas_files_lslu_3.txt,atime=Y,series=3);
+%unix_file_list(/anenv/prd/cads/cads1/,filepath=C:\temp\hsbc\input\sas_files_lslu_cads1_1.txt,atime=Y);
+/*%unix_file_list(/anenv/prd/cads/cads1/,filepath=C:\temp\hsbc\input\sas_files_lslu_cads1_2.txt,atime=Y,series=2);*/
+/*%unix_file_list(/mnt/c/temp/,filepath=C:\temp\file_listing\sas_files_lslu_3.txt,atime=Y,series=3);*/
 
 /*============================================================================================================*/
 /* MERGE THE TWO FILES					                                   								  	  */

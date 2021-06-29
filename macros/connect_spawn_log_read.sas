@@ -52,11 +52,11 @@
 /* for the logs can be automatically generated. Using the config_location option this default location can be */
 /* changed. This will allow testing and setup to be easier.													  */
 /*------------------------------------------------------------------------------------------------------------*/
-data _null_;
-	folder="%sysfunc(getoption(SASINITIALFOLDER))";
-	CALL SCAN( "%sysfunc(getoption(SASINITIALFOLDER))", -2, last_pos, last_length, "&os_set_delim", 'l');
-	call symput("sas_config",substrn( "%sysfunc(getoption(SASINITIALFOLDER))", 1, last_pos + last_length -1));
-run;
+/*data _null_;*/
+/*	folder="%sysfunc(getoption(SASINITIALFOLDER))";*/
+/*	CALL SCAN( "%sysfunc(getoption(SASINITIALFOLDER))", -2, last_pos, last_length, "&os_set_delim", 'l');*/
+/*	call symput("sas_config",substrn( "%sysfunc(getoption(SASINITIALFOLDER))", 1, last_pos + last_length -1));*/
+/*run;*/
 /*============================================================================================================*/
 /* HISTORY REQUIREMENT					                                    								  */
 /*============================================================================================================*/
@@ -131,7 +131,7 @@ run;
 /*------------------------------------------------------------------------------------------------------------*/
 data readlogs;
 	set _logs_connect;
-	where Filesize > 0 and datepart(created)>="&dt_hist."d and entrytype ="File";
+	where Filesize > 0 and /*datepart(created)>="&dt_hist."d and*/ entrytype ="File";
 run;
 /*------------------------------------------------------------------------------------------------------------*/
 /* SUB STEP	3: CHECK FOR ZERO OBSERVATIONS																	  */
